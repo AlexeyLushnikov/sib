@@ -5,7 +5,7 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-FROM nginx:1.23.1
+FROM nginx:1.25.2
 WORKDIR /app
 COPY --from=build /app/build .
 COPY nginx.conf.template /etc/nginx/templates/default.conf.template
